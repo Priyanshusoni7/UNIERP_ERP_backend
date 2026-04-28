@@ -46,11 +46,12 @@ public class DashboardService {
         String role = user.getRole();
         String classroomUrl = "";
         String hireSphereUrl = "";
-        String codeStateUrl = ""; // Placeholder for now
+        String codeStageUrl = "";
 
         if ("STUDENT".equalsIgnoreCase(role)) {
             classroomUrl = "https://unierp-classroom.vercel.app/dashboard/" + userId;
             hireSphereUrl = "https://unierp-hire-sphere-frontend.vercel.app/" + userId;
+            codeStageUrl = "https://campusone-codestage.vercel.app/home/" + userId;
         } else if ("FACULTY".equalsIgnoreCase(role)) {
             classroomUrl = "https://unierp-classroom.vercel.app/dashboard/" + userId;
         } else if ("PLACEMENT_OFFICER".equalsIgnoreCase(role)) {
@@ -58,6 +59,7 @@ public class DashboardService {
         } else if ("ADMIN".equalsIgnoreCase(role)) {
             classroomUrl = "https://unierp-classroom.vercel.app/dashboard/" + userId;
             hireSphereUrl = "https://unierp-hire-sphere-frontend.vercel.app/" + userId;
+            codeStageUrl = "https://campusone-codestage.vercel.app/home/" + userId;
         }
 
         List<String> features = Arrays.asList(
@@ -71,7 +73,7 @@ public class DashboardService {
         return QuickLinksResponse.builder()
                 .classroomUrl(classroomUrl)
                 .hireSphereUrl(hireSphereUrl)
-                .codeStateUrl(codeStateUrl)
+                .codeStageUrl(codeStageUrl)
                 .features(features)
                 .build();
     }

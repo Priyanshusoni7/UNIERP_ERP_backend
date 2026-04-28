@@ -14,6 +14,6 @@ import java.util.List;
 public class QuickLinksResponse {
     private String classroomUrl;
     private String hireSphereUrl;
-    private String codeStateUrl;
+    private String codeStageUrl;
     private List<String> features;
 }
